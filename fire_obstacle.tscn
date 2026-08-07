@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d4for38rpt3g0"]
+
+[ext_resource type="Script" uid="uid://bvuvdgncgl3lk" path="res://fire_obstacle.gd" id="1_088yp"]
+[ext_resource type="Texture2D" uid="uid://211dcj71oik2" path="res://images.png" id="2_kfv8n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crfgk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kfv8n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e38am"]
+size = Vector2(106, 106)
+
+[node name="FireObstacle" type="Area2D" unique_id=167309481 groups=["Obstacles"]]
+script = ExtResource("1_088yp")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1732601349]
+scale = Vector2(0.26368162, 0.21245296)
+sprite_frames = SubResource("SpriteFrames_crfgk")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=78098486]
+shape = SubResource("RectangleShape2D_e38am")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
