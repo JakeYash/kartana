@@ -14,11 +14,14 @@ config/name="Kartana"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://chw5e2ji2h5jy"
+
 [display]
 
 window/size/viewport_width=1080
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [global_group]

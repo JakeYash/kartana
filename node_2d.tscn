@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dhyovcqglquce"]
+
+[ext_resource type="PackedScene" uid="uid://blr3gkcrn3esw" path="res://player.tscn" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://d4for38rpt3g0" path="res://fire_obstacle.tscn" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=952338172]
+
+[node name="Player" parent="." unique_id=1182245648 instance=ExtResource("1_0e48y")]
+
+[node name="FireObstacle" parent="." unique_id=167309481 instance=ExtResource("2_epypp")]
+
+[connection signal="minus_one_hit" from="FireObstacle" to="Player" method="_on_fire_obstacle_minus_one_hit"]

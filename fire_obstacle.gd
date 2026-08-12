@@ -4,9 +4,7 @@ signal minus_one_hit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var screen_size = get_viewport_rect().size
-	var cell_size = screen_size.x / 3.0
-	position = Vector2(cell_size/2,cell_size/2) 
+	position = Vector2(Global.cell_size/2,Global.cell_size/2) 
 	pass # Replace with function body.
 
 
@@ -15,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_area_entered(body: Area2D) -> void:
 	if (body is Player):
 		minus_one_hit.emit()
 		
